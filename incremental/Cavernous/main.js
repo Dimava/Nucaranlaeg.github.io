@@ -75,6 +75,7 @@ function resetLoop() {
 	if (mana.base == 5.5) getMessage("The Looping of Looping Loops").display() && setSetting(toggleAutoRestart, 1);
 	if (mana.base == 6) getMessage("Strip Mining").display();
 	if (routes.length == 4) getMessage("All the known ways").display() && setSetting(toggleGrindMana, true);
+	if (clones.length == 2) getMessage("First Clone").display() && clones[1].select(); 
 	stats.forEach(s => {
 		s.reset();
 		s.update();
