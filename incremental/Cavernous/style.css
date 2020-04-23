@@ -1,3 +1,10 @@
+@font-face {
+	font-family: symbolic;
+	src:
+		local("Segoe UI Symbol"), 
+		url(./NotoSansSymbols-Regular.ttf);
+}
+
 :root {
 	--cell-size: 12px;
 }
@@ -112,6 +119,11 @@ width: 21;
 
 .character {
 	width: 16px;
+	font-family: symbolic;
+}
+
+.symbolic {
+	font-family: symbolic;
 }
 
 .bottom-block {
@@ -624,6 +636,7 @@ td::before {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-family: symbolic;
 }
 
 td:after {
