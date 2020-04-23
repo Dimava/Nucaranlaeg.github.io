@@ -103,7 +103,8 @@ function startCreateClone(completions, priorCompletions){
 
 function completeCreateClone(x, y){
 	Clone.addNewClone();
-	resetLoop();
+	clones.map(e => e.takeDamage(999));
+	setSetting(toggleAutoRestart, 3);
 }
 
 function getNextCloneAmount(){
