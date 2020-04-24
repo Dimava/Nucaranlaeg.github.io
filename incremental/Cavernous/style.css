@@ -365,8 +365,9 @@ h4#location-name {
 #map-inner {
 	border-collapse: collapse;
 	table-layout: fixed;
-	/* width: calc(12px * 45); */
-	font-size: var(--cell-size);
+	width: calc(var(--cell-count) * 1em);
+	font-size: var(
+	--cell-size);
 	align-self: center;
 }
 

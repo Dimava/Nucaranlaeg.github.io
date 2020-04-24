@@ -361,7 +361,7 @@ function setup(){
 		settings.debug_speedMultiplier = 50;
 	}
 	if (URLParams.has('map')) {
-		mapLocations.map((r, y) => r.map((e, x) => getMapLocation(x, y)));
+		mapLocations.map((r, y) => r.map((e, x) => getMapLocation(x - xOffset, y - yOffset)));
 	}
 }
 

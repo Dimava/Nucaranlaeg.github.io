@@ -165,6 +165,7 @@ function drawMap() {
 	mapDirt.forEach(([x,y])=>drawCell(x, y));
 	mapDirt = [];
 	mapStain.forEach(([x,y])=>drawCell(x, y));
+	mapStain = [];
 	
 	mapNode = mapNode || document.querySelector("#map-inner");
 	clampMap();
@@ -204,10 +205,11 @@ function clampMap() {
 		}
 	}
 
-	let size = Math.max(xMax - xMin + 1, yMax - yMin + 1);
-	size = yMax - yMin + 1;
-	let scale = Math.floor(440 / size);
-	mapNode.style.setProperty("--cell-count", size + "px");
+	let xSize = xMax - xMin + 1;
+	let ySize = yMax - yMin + 1;
+	let scale = Math.min(Math.floor(440 / ySize), Math.floor(900 / xSize));
+	mapNode.style.setProperty("--cell-count-x", xSize);
+	mapNode.style.setProperty("--cell-count-y", ySize);
 	mapNode.style.setProperty("--cell-size", scale + "px");
 }
 
