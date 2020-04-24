@@ -15,6 +15,7 @@ class Clone {
 		this.repeated = false;
 		this.walkTime = 0;
 		this.activeSpells = [];
+		this.timeLeft = 0;
 	}
 
 	takeDamage(amount) {

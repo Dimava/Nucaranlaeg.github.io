@@ -23,11 +23,10 @@ function showLocationAfterSteps(index, queueNumber, isDraw = false, isHover = fa
 		target.classList.add('hover-location');
 		hoverLocation = target;
 	}
-	else {
-		finalLocation && finalLocation.classList.remove('final-location');
-		target.classList.add('final-location');
-		finalLocation = target;
-	}
+	finalLocation && finalLocation.classList.remove('final-location');
+	target.classList.add('final-location');
+	finalLocation = target;
+
 	if (!isDraw) viewCell({"target": target});
 }
 
