@@ -138,8 +138,10 @@ width: 21;
 	font-family: symbolic;
 }
 
+
 body.no-font .symbolic,
-body.no-font .character {
+body.no-font .character,
+body.no-font td::before {
 	font-family: websymbolic;
 }
 
