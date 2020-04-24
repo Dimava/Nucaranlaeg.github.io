@@ -183,6 +183,7 @@ function load(){
 	if (version < previousVersion) {
 		alert(`Error: Version number reduced!\n${previousVersion} -> ${version}`);
 	}
+	loadSettings(saveGame.settings);
 
 	stats.forEach(s => s.current = 0);
 	for (let i = 0; i < saveGame.playerStats.length; i++){
@@ -199,7 +200,6 @@ function load(){
 	while (clones.length < saveGame.cloneData.count){
 		Clone.addNewClone();
 	}
-	while (settings.useAlternateArrows != saveGame.settings.useAlternateArrows && saveGame.settings.useAlternateArrows !== undefined) toggleUseAlternateArrows();
 	queues = ActionQueue.fromJSON(saveGame.cloneData.queues);
 	savedQueues = [];
 	for (let i = 0; i < saveGame.stored.length; i++){
@@ -221,8 +221,6 @@ function load(){
 	if (saveGame.routes){
 		routes = Route.fromJSON(saveGame.routes);
 	}
-
-	loadSettings(saveGame.settings);
 
 	selectClone(0);
 	redrawQueues();

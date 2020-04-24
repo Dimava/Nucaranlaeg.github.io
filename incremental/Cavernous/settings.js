@@ -74,6 +74,8 @@ function loadSettings(savedSettings) {
 
 	setSetting(toggleGrindMana, !!savedSettings.grindMana);
 
+	setSetting(toggleUseAlternateArrows, !!savedSettings.useAlternateArrows)
+	
 	setSetting(switchRuneList, !!savedSettings.showingRunes);
 
 	Object.assign(settings, savedSettings, settings);

@@ -212,19 +212,18 @@ function clearQueue(queue = null, noConfirm = false){
 	showCursor();
 }
 
+let characterKeys = "LRUDI<=N1N2N3S1";
+let characterValues = "🡄,🡆,🡅,🡇,🞇,⟲,=".split(',');
+// alternate is "←,→,↑,↓,○,⟲,="
+function getArrowCharacter(actionID) {
+	return characterValues[characterKeys.indexOf(actionID)];
+}
+
 function createActionNode(action){
 	if (!isNaN(+action)) return createQueueActionNode(action);
 	let actionNode = document.querySelector("#action-template").cloneNode(true);
 	actionNode.removeAttribute("id");
-	let character = {
-		"L": settings.useAlternateArrows ? "←" : "🡄",
-		"R": settings.useAlternateArrows ? "→" : "🡆",
-		"U": settings.useAlternateArrows ? "↑" : "🡅",
-		"D": settings.useAlternateArrows ? "↓" : "🡇",
-		"I": settings.useAlternateArrows ? "○" : "🞇",
-		"<": settings.useAlternateArrows ? "⟲" : "⟲",
-		"=": settings.useAlternateArrows ? "=" : "=",
-	}[action];
+	let character = getArrowCharacter(action);
 	if (!character){
 		character = action[0] == "N" ? runes[action[1]].icon : spells[action[1]].icon;
 	}
