@@ -459,7 +459,7 @@ td.gold {
 td.mana,
 td.mined-mana {
 	background-color: #2a78a5;
-	background-image: radial-gradient(#ffffff00, #ffffffaa, #00000033);
+	background-image: radial-gradient(#ffffff00, #ffffff88, #00000033);
 }
 
 td.mined-mana:before {
@@ -555,7 +555,7 @@ td.armour2:before {
 
 td.pit {
 	background-color: #000000;
-	background-image: radial-gradient(#222, black 65%, #a52a2a);
+	/* background-image: radial-gradient(#000, black 65%, #a52a2a); */
 }
 
 td.lava {
@@ -638,7 +638,7 @@ td.hobgoblin:before {
 
 td.coal {
 	background-color: #222222;
-	background-image: radial-gradient(#ffffff00, #ffffffaa, #00000033);
+	background-image: radial-gradient(#ffffff00, #ffffff88, #00000033);
 }
 
 td.coal:before {
