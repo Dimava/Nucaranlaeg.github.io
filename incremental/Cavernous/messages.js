@@ -84,7 +84,13 @@ let messages = [
 	new Message("First Clone", `
 					You've created your first clone!  It can carry out actions in exactly the same way you can.
 					You can create more clones by bringing more gold to the Clone Machine.  Click on the Clone Machine to find out how much the next clone costs.
-					Multiple clones use up the same amount of mana as a single clone, and they can act independently or help each other out.`),
+
+					Two clones use up the same amount of mana as a single one.
+					Clones may both act independently or help each other out to split up the used time.
+					But the walking always takes the same time.
+
+					Use <u>Tab</u> or <u>click</u> the action queue to switch active clone.
+					Use <u>Ctrl+A</u> to select all clones.`),
 	new Message("Goblin", `
 					A strange statue in the passage suddenly moves to attack you as you approach!  This place is stranger than you'd thought.`),
 	new Message("Runic Lore", `

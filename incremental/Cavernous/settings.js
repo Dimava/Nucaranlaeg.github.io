@@ -39,6 +39,7 @@ function toggleAutoRestart() {
 function toggleUseAlternateArrows() {
 	settings.useAlternateArrows = !settings.useAlternateArrows;
 	document.querySelector("#use-alternate-arrows-toggle").innerHTML = settings.useAlternateArrows ? "Use default arrows" : "Use alternate arrows";
+	document.body.classList.toggle("no-font", settings.useAlternateArrows);
 	return settings.useAlternateArrows;
 }
 
