@@ -415,6 +415,7 @@ td.hover-location:before {
 
 td.hover-location:before {
 	border-color: #ff00ff;
+	outline-color: #ff00ff;
 }
 
 body.test-16px td.occupied:before,
@@ -438,11 +439,13 @@ td.rock {
 
 td.gold {
 	background-color: #ffd700;
+	background-image: radial-gradient(#ffffff00, #ffffffaa, #00000033);
 }
 
 td.mana,
 td.mined-mana {
 	background-color: #2a78a5;
+	background-image: radial-gradient(#ffffff00, #ffffffaa, #00000033);
 }
 
 td.mined-mana:before {
@@ -455,7 +458,10 @@ td.clone-machine {
 
 td.iron {
 	background-color: #777777;
+	background-image: radial-gradient(#ffffff00, #ffffff88, #00000033);
 }
+
+td.iron:before {/* content: "🜜"; */}
 
 td.furnace,
 td.furnace2 {
@@ -535,6 +541,7 @@ td.armour2:before {
 
 td.pit {
 	background-color: #000000;
+	background-image: radial-gradient(#222, black 65%, #a52a2a);
 }
 
 td.lava {
@@ -617,10 +624,11 @@ td.hobgoblin:before {
 
 td.coal {
 	background-color: #222222;
+	background-image: radial-gradient(#ffffff00, #ffffffaa, #00000033);
 }
 
 td.coal:before {
-	content: "○";
+	/* content: "○"; */
 	/* top: -1px; */
 	/* left: 1px; */
 	color: #ffffff;
