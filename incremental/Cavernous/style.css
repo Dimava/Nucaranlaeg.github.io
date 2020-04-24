@@ -2,7 +2,10 @@
 	font-family: symbolic;
 	src:
 		local("Segoe UI Symbol"), 
-		url(./NotoSansSymbols-Regular.ttf);
+		url(./NotoSansSymbols-Regular.ttf), 
+		url(./NotoSansSymbols2-Regular.ttf), 
+		url(./LastResort.ttf),
+		url(./UnicodeBMPFallback.ttf);
 }
 
 :root {
