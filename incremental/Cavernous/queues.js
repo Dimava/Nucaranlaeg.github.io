@@ -261,15 +261,15 @@ function selectQueueAction(queue, action, percent){
 	}
 	node.style.backgroundSize = `${Math.max(0, percent)}%`;
 	let workProgressBar = queueBlock.querySelector('.work-progress');
-	let lastProgess = +workProgressBar.style.width.replace("%", "");
+	let lastProgess = +workProgressBar.style.backgroundSize.replace("%", "");
 	if (percent < lastProgess) {
-		workProgressBar.style.width = "0%";
+		workProgressBar.style.backgroundSize = "0%";
 		lastProgess = 0
 	}
 	if (percent < lastProgess + 100/(1*60)){ // 1s@60fps
-		workProgressBar.style.width = percent + "%";
+		workProgressBar.style.backgroundSize = percent + "%";
 	} else if (lastProgess) {
-		workProgressBar.style.width = "0%";
+		workProgressBar.style.backgroundSize = "0%";
 	}
 	// queueNode.parentNode.scrollLeft = Math.max(action * 16 - (this.width / 2), 0);
 }
