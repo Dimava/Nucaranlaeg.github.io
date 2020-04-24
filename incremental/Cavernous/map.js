@@ -73,8 +73,8 @@ let mapStain = [];
 
 let mapLocations = [];
 
-while (mapLocations.length < map.length){
-	mapLocations.push([]);
+while (mapLocations.length < map.length) {
+	mapLocations.push(Array(map[0].length).fill());
 }
 
 function getMapLocation(x, y, adj = false){
@@ -286,6 +286,7 @@ function getMapTile(x, y) {
 function resetMap() {
 	mapLocations.forEach((ml, y) => {
 		ml.forEach((l, x) => {
+			if (!l) return;
 			l.reset();
 			mapDirt.push([x, y]);
 		});

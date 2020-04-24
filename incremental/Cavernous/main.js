@@ -189,8 +189,8 @@ function load(){
 		getStat(saveGame.playerStats[i].name).base = saveGame.playerStats[i].base;
 	}
 	mapLocations = [];
-	while (mapLocations.length < map.length){
-		mapLocations.push([]);
+	while (mapLocations.length < map.length) {
+		mapLocations.push(Array(map[0].length).fill());
 	}
 	for (let i = 0; i < saveGame.locations.length; i++){
 		getMapLocation(saveGame.locations[i][0], saveGame.locations[i][1], true).priorCompletions = saveGame.locations[i][2];
@@ -359,6 +359,9 @@ function setup(){
 	if (URLParams.has('timeless')) {
 		timeBanked = 1e9;
 		settings.debug_speedMultiplier = 50;
+	}
+	if (URLParams.has('map')) {
+		mapLocations.map((r, y) => r.map((e, x) => getMapLocation(x, y)));
 	}
 }
 
