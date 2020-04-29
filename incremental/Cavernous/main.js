@@ -316,8 +316,9 @@ setInterval(function mainLoop() {
 		let speedCap = settings.debug_speedMultiplier || 10;
 		timeAvailable = Math.min(time + timeBanked, time * Math.min(speedMultiplier, speedCap));
 	}
-	if (timeAvailable > 1000) {
-		timeAvailable = 1000;
+	let updateTimeCap = settings.debug_updateTimeCap || 1000;
+	if (timeAvailable > updateTimeCap) {
+		timeAvailable = updateTimeCap;
 	}
 	if (timeAvailable > mana.current * 1000){
 		timeAvailable = mana.current * 1000;
