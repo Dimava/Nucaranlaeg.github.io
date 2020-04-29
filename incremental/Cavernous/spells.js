@@ -64,3 +64,7 @@ let spells = [
 	new Spell("Arcane Shield", "A", 75, 0, 1, true, "Shield yourself with magic!  Any damage taken will be deducted from your mana instead of injuring you."),
 	new Spell("Mystic Blade", "M", 100, 0, 5, true, "Sharpen your blades with arcane might!  Any damage you deal will be doubled."),
 ];
+
+for (let v of spells) {
+	spells[v.name.replace(/(^|\s)(.)/g, (s, a, b) => b.toUpperCase()).replace(/\W/g, '')] = v;
+}

@@ -74,6 +74,10 @@ let stuff = [
 	new Stuff("Steel Armour", "]", "A suit of steel armour.  This should help you take more hits. (+15 health)  Max 1 armour per clone.", "#222222", 0, calcCombatStats),
 ];
 
+for (let v of stuff) {
+	stuff[v.name.replace(/(^|\s)(.)/g, (s, a, b) => b.toUpperCase()).replace(/\W/g, '')] = v;
+}
+
 function setContrast(colour) {
 	darkness = (parseInt(colour.slice(1, 3), 16) * 299 + parseInt(colour.slice(3, 5), 16) * 587 + parseInt(colour.slice(5, 7), 16) * 114) / 1000;
 	return darkness > 125 ? "#000000" : "#ffffff";

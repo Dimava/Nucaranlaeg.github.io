@@ -16,6 +16,11 @@ class Stat {
 		this.dirty = true;
 	}
 
+	valueOf() {
+		// as `+stat`
+		return this.value;
+	}
+
 	get baseValue() {
 		return 100 / (100 + this.base);
 	}
@@ -96,7 +101,7 @@ class Stat {
 	}
 
 	spendMana(amount) {
-		if (this.name != "Mana") return;
+		if (this.name != "Mana") alert('Error: invalid usage of Stat.spendMana()\nplease send to devs');
 		this.current -= amount;
 		if (this.current < -1) alert('Error: overspend mana\nplease send to devs');
 		if (this.current < 0) this.current = 0;
@@ -117,6 +122,11 @@ let stats = [
 	new Stat("Defense", "", "How well you avoid taking damage. (Shields increase all clones' stats)", 0, false),
 	new Stat("Health", "", "How many hits you can take until you're nothing more than meat. (Armour increases all clones' stats)", 10, false),
 ];
+
+
+for (let v of stats) {
+	stats[v.name.replace(/(^|\s)(.)/g, (s, a, b) => b.toUpperCase()).replace(/\W/g, '')] = v;
+}
 
 function getStat(name) {
 	return stats.find(a => a.name == name);

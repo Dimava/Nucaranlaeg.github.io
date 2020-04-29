@@ -87,3 +87,7 @@ let runes = [
 	new Rune("Teleport To", "T", 10, canPlaceTeleport, 0, "This rune allows someone or something to come through from another place.  Only one can be placed.<br>Requires:<br>1 Iron Bar<br>1 Gold Nugget<br>Runic Lore 10"),
 	new Rune("Teleport From", "F", 15, simpleRequire([["Iron Ore", 2]]), 1000, "This rune allows someone to slip beyond to another place.  Interact with it after inscribing it to activate it.<br>Requires:<br>2 Iron Ore<br>Runic Lore 15", null, "Teleport"),
 ];
+
+for (let v of runes) {
+	runes[v.name.replace(/(^|\s)(.)/g, (s, a, b) => b.toUpperCase()).replace(/\W/g, '')] = v;
+}

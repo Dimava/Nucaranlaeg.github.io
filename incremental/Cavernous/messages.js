@@ -104,3 +104,7 @@ let messages = [
 					You'll preserve your health, but it might take a lot of mana to maintain.  Each clone will have to form one separately.
 					It will last until then end of your next fight.`),
 ];
+
+for (let v of messages) {
+	messages[v.name.replace(/(^|\s)(.)/g, (s, a, b) => b.toUpperCase()).replace(/\W/g, '')] = v;
+}

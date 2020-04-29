@@ -264,6 +264,10 @@ let actions = [
 	new Action("Heal", 100, [["Runic Lore", 1]], completeHeal, null, tickHeal),
 ];
 
+for (let v of actions) {
+	actions[v.name.replace(/(^|\s)(.)/g, (s, a, b) => b.toUpperCase()).replace(/\W/g, '')] = v;
+}
+
 function getAction(name) {
 	return actions.find(a => a.name == name);
 }
